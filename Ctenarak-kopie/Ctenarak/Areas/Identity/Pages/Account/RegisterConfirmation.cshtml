@@ -1,0 +1,22 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+        Tento web neověřuje vytvoření účtů odesláním Emailu na Emailovou adresu
+</p>
+    }
+    else
+    {
+<p>
+        Zkontrolujte vámi zadaný Email pro vytvoření účtu.
+</p>
+    }
+}
+

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Ctenarak.Models.Article>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<p>
+    <a asp-action="Create">Přidat</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Obsah)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulek)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Popis)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Obsah)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulek)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Popis)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Upravit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Podrobnosti</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Smazat</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
